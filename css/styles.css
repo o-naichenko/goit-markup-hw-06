@@ -568,8 +568,9 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 28px;
+  max-width: 528px;
   padding: 40px;
+  margin-bottom: ;
 
   background-color: #fff;
 
@@ -596,11 +597,22 @@ img {
 .order-form {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .order-form__content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.order-form__title {
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+
+  color: #212121;
 }
 .form-field {
   position: relative;
@@ -608,7 +620,6 @@ img {
 .form-field:not(:last-child) {
   margin-bottom: 28px;
 }
-
 .form-field__input {
   display: block;
   min-width: 448px;
@@ -616,7 +627,10 @@ img {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 }
-.form-field__label-title {
+.form-field__input:placeholder-shown > .form-field__title {
+  transform: translateX(20px);
+}
+.form-field__title {
   position: absolute;
   top: 50%;
   left: 42px;
@@ -640,10 +654,51 @@ img {
   display: block;
   min-width: 448px;
   padding: 12px 16px;
-  padding: 12px 18px 12px 42px;
+  padding: 12px 16px 12px 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   min-width: 448px;
+}
+.form-field__comment-title {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  /* transform: translateY(-50%); */
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  color: var(--gray-color);
+}
+.form-field__conditions {
+  display: block;
+}
+.form-field__conditions-title {
+  font-weight: 400px;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: var(--gray-color);
+}
+.form-field__conditions-link {
+  font-weight: 400px;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: var(--blue-color);
+}
+.form-field__submit {
+  padding: 10px 55px;
+
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  color: var(--white-color);
+  background-color: var(--blue-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
 }
 /* PORTFOLIO */
 /* gallery */
