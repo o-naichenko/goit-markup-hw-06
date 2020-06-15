@@ -577,13 +577,14 @@ img {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .order-modal__close {
-  display: flex;
+  display: inline-flex;
   position: absolute;
   top: -9px;
   right: -10px;
-
   width: 30px;
   height: 30px;
+  padding: 0;
+  margin: 0;
   align-items: center;
   justify-content: center;
   background-color: var(--white-color);
