@@ -570,7 +570,7 @@ img {
   left: 50%;
   max-width: 528px;
   padding: 40px;
-  margin-bottom: ;
+  margin-bottom: 30px;
 
   background-color: #fff;
 
@@ -627,10 +627,23 @@ img {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 }
-.form-field__input:placeholder-shown > .form-field__title {
-  transform: translateX(20px);
+.form-field__input:focus,
+.form-field__comment:focus {
+  border: 1px solid var(--blue-color);
+  outline: 0;
+}
+.form-field__input:focus + .form-field__title {
+  transform: translate(-20px, -45px);
+  color: var(--blue-color);
+}
+.form-field__input:focus ~ .form-field__icon {
+  fill: var(--blue-color);
+}
+.form-field__input:not(:placeholder-shown) + .form-field__title {
+  transform: translateX(-20px) translateY(-45px);
 }
 .form-field__title {
+  display: block;
   position: absolute;
   top: 50%;
   left: 42px;
@@ -640,6 +653,7 @@ img {
   line-height: 16px;
   letter-spacing: 0.01em;
   color: var(--gray-color);
+  transition: var(--trans-time);
 }
 .form-field__icon {
   display: block;
@@ -649,6 +663,7 @@ img {
   transform: translateY(-50%);
   margin-right: 8px;
   fill: currentColor;
+  transition: var(--trans-time);
 }
 .form-field__comment {
   display: block;
@@ -658,6 +673,11 @@ img {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   min-width: 448px;
+}
+.form-field__comment:focus + .form-field__comment-title,
+.form-field__comment:not(:placeholder-shown) + .form-field__comment-title {
+  transform: translateY(-35px);
+  color: var(--blue-color);
 }
 .form-field__comment-title {
   position: absolute;
@@ -669,6 +689,7 @@ img {
   line-height: 16px;
   letter-spacing: 0.01em;
   color: var(--gray-color);
+  transition: var(--trans-time);
 }
 .form-field__conditions {
   display: block;
